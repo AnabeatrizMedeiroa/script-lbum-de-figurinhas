@@ -1,21 +1,21 @@
-importar numpy como np
+import numpy as np
 # Álbum de Figurinhas usando o Numpy
 def album_raras(total = 670, figurinhas_por_pacote = 5,raras=20,super_raras = 2):
     # Vamos começar com o álbum
-    álbum = np.array([])
+    album = np.array([])
     pacotes = 0
     # Enquanto o número de figurinhas for menor que o número total de figurinhas, vamos comprar um novo pacote
     # O comprimento da variável album é o número de figurinhas no nosso álbum
-    enquanto len(álbum) < total:
+    while len(album) < total:
        pacotes = pacotes + 1
        for i in np.arange(figurinhas_por_pacote):
-        se eu < 2:
+        if i < 2:
          nova_figurinha = np.random.randint(0,total-raras-super_raras)
-        elif < 4:
+        elif i < 4:
          nova_figurinha = np.random.randint(0,total-super_raras)
-        outro:
+        else:
          nova_figurinha = np.random.randint(0,total)
-       se nova_figurinha não estiver no álbum:
+       if nova_figurinha not in album:
          album = np.append(album,nova_figurinha)
     
     print(pacotes)
